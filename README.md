@@ -7,9 +7,15 @@ They are meant to be standalone and as simple as possible, though I might factor
 
 ## Q-Learning:
 
+Tabular Q-Learning agent that learns to solve a slightly harder version of the common text-based domain Frozen Lake (8x8 vs 4x4 grid). Visualizing the return of a random vs learned agent and also value function learned by agent.
+
+![q learned frozenlake](q-learning/frozen_lake/plots.png)
+
 ## Linear TD learning:
 
 ## Deep Q Learning:
+
+Simple convolutional DQN to play Atari pong. Examples in the code also solve common control problems like acrobot and cartpole.
 
 ![pong agent](deep-q-learning/pong/eval.gif)
 ![perf metrics](deep-q-learning/pong/tensorboard.PNG)
