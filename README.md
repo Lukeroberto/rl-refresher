@@ -13,6 +13,8 @@ Tabular Q-Learning agent that learns to solve a slightly harder version of the c
 
 ## Linear TD learning:
 
+Currently in development.
+
 ## Deep Q Learning:
 
 Simple convolutional DQN to play Atari pong. Examples in the code also solve common control problems like acrobot and cartpole.
