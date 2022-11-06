@@ -21,3 +21,9 @@ Simple convolutional DQN to play Atari pong. Examples in the code also solve com
 
 ![pong agent](deep-q-learning/pong/eval.gif)
 ![perf metrics](deep-q-learning/pong/tensorboard.PNG)
+
+## Monte Carlo Tree Search
+
+Currently in development.
+
+In a variety of grid world environments, use a model to perform rollout-based search at each step. 
