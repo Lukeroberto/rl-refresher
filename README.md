@@ -24,6 +24,9 @@ Simple convolutional DQN to play Atari pong. Examples in the code also solve com
 
 ## Monte Carlo Tree Search
 
-Currently in development.
+MCTS rollout-based Value function in the 4x4 Frozen Lake environment for different amounts of computation.
+
+![100](mcts/frozen-lake/value-100.png) ![500](mcts/frozen-lake/value-500.png) 
+![1000](mcts/frozen-lake/value-1000.png) ![2000](mcts/frozen-lake/value-5000.png)
 
 In a variety of grid world environments, use a model to perform rollout-based search at each step. 
