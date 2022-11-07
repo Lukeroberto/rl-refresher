@@ -28,4 +28,10 @@ MCTS rollout-based Value function in the 8x8 Frozen Lake environment.
 
 ![5000](mcts/frozen-lake/value-5000.png)
 
-In a variety of grid world environments, use a model to perform rollout-based search at each step. 
+
+Testing out in the [Minigrid](https://github.com/Farama-Foundation/Minigrid/blob/master/minigrid/minigrid_env.py) environment suite. Example of the Four Rooms domain below:
+![four-rooms](mcts/four-rooms/env.png)
+
+Unfortunately, MCTS does rather poorly in this domain because of sparse rewards + high revisit factor (search tree is very cyclic). Visitation frequencies look something like this for a simple problem:
+
+![four-rooms-visits](mcts/four-rooms/visits.png)
