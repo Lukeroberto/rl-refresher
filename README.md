@@ -28,6 +28,10 @@ MCTS rollout-based Value function in the 8x8 Frozen Lake environment.
 
 ![5000](mcts/frozen-lake/value-5000.png)
 
+And the learned search tree:
+
+![tree](mcts/frozen-lake/visit-tree.png)
+
 
 Testing out in the [Minigrid](https://github.com/Farama-Foundation/Minigrid/blob/master/minigrid/minigrid_env.py) environment suite. Example of the Four Rooms domain below:
 ![four-rooms](mcts/four-rooms/env.png)
@@ -35,3 +39,4 @@ Testing out in the [Minigrid](https://github.com/Farama-Foundation/Minigrid/blob
 Unfortunately, MCTS does rather poorly in this domain because of sparse rewards + high revisit factor (search tree is very cyclic). Visitation frequencies look something like this for a simple problem:
 
 ![four-rooms-visits](mcts/four-rooms/visits.png)
+![four-rooms-graph](mcts/four-rooms/visit-graph.png)
