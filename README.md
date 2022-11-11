@@ -4,23 +4,13 @@ This repo is meant to contain a collection of some implementations that are both
 
 They are meant to be standalone and as simple as possible, though I might factor out some very redundant tooling if necessary for readability.
 
+## AlphaZero-style MCTS
 
-## Q-Learning:
+Currently in development, videos soon.
 
-Tabular Q-Learning agent that learns to solve a slightly harder version of the common text-based domain Frozen Lake (8x8 vs 4x4 grid). Visualizing the return of a random vs learned agent and also value function learned by agent.
+Trains an agent similar to https://arxiv.org/pdf/1712.01815.pdf. Replaces the simulation procedure with a value network and the tree policy with a policy network that recurses down to an unexpanded node. Trained to minimize the difference from the actual episode return and also the policy priors from the MCTS-found action distribution.
 
-![q learned frozenlake](q-learning/frozen_lake/plots.png)
 
-## Linear TD learning:
-
-Currently in development.
-
-## Deep Q Learning:
-
-Simple convolutional DQN to play Atari pong. Examples in the code also solve common control problems like acrobot and cartpole.
-
-![pong agent](deep-q-learning/pong/eval.gif)
-![perf metrics](deep-q-learning/pong/tensorboard.PNG)
 
 ## Monte Carlo Tree Search
 
@@ -40,3 +30,20 @@ Unfortunately, MCTS does rather poorly in this domain because of sparse rewards 
 
 ![four-rooms-visits](mcts/four-rooms/visits.png)
 ![four-rooms-graph](mcts/four-rooms/visit-graph.png)
+
+## Deep Q Learning:
+
+Simple convolutional DQN to play Atari pong. Examples in the code also solve common control problems like acrobot and cartpole.
+
+![pong agent](deep-q-learning/pong/eval.gif)
+![perf metrics](deep-q-learning/pong/tensorboard.PNG)
+
+## Q-Learning:
+
+Tabular Q-Learning agent that learns to solve a slightly harder version of the common text-based domain Frozen Lake (8x8 vs 4x4 grid). Visualizing the return of a random vs learned agent and also value function learned by agent.
+
+![q learned frozenlake](q-learning/frozen_lake/plots.png)
+
+## Linear TD learning:
+
+Currently in development.
