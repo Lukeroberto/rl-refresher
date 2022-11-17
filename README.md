@@ -4,11 +4,21 @@ This repo is meant to contain a collection of some implementations that are both
 
 They are meant to be standalone and as simple as possible, though I might factor out some very redundant tooling if necessary for readability.
 
+## MuZero
+
+Implementation of the MuZero algorithm detailed in: https://arxiv.org/pdf/1911.08265.pdf. Replaces simulation procedure with prediction network, evnironment model with a dynamics network, and embeds the observations into a latent space to perform search. Trained to minimize the difference between state reward, MCTS-action distribution, and episode return.
+
+Currently in development, videos soon.
+
 ## AlphaZero-style MCTS
 
 Currently in development, videos soon.
 
 Trains an agent similar to https://arxiv.org/pdf/1712.01815.pdf. Replaces the simulation procedure with a value network and the tree policy with a policy network that recurses down to an unexpanded node. Trained to minimize the difference from the actual episode return and also the policy priors from the MCTS-found action distribution.
+
+
+Example of agent training on simple "Frozen Lake" environment. Using only 20 look-ahead steps, it is easily able to solve the environment (vs the over 5000 steps needed for vanilla MCTS).
+![Training](mcts-alpha-zero/frozen_lake/trained_network.PNG)
 
 
 
