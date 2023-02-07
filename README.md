@@ -4,15 +4,24 @@ This repo is meant to contain a collection of some implementations that are both
 
 They are meant to be standalone and as simple as possible, though I might factor out some very redundant tooling if necessary for readability.
 
+
+## DreamerV3
+
+Currently in development.
+
+Model based agent detailed in: https://arxiv.org/pdf/2301.04104v1.pdf.
+
+Simpler than MuZero, training happens in an actor-critic style. There is a encoder/decoder style world model that tries to learn a consistent latent state. There are action and value models that are trained separately that trained using some fancy tricks on relatively standard approahc that uses REINFORCE-style gradients for the actor and almost a distributional-return style value function.
+
+
 ## MuZero
+
+Currently in development.
 
 Implementation of the MuZero algorithm detailed in: https://arxiv.org/pdf/1911.08265.pdf. Replaces simulation procedure with prediction network, evnironment model with a dynamics network, and embeds the observations into a latent space to perform search. Trained to minimize the difference between state reward, MCTS-action distribution, and episode return.
 
-Currently in development, videos soon.
 
 ## AlphaZero-style MCTS
-
-Currently in development, videos soon.
 
 Trains an agent similar to https://arxiv.org/pdf/1712.01815.pdf. Replaces the simulation procedure with a value network and the tree policy with a policy network that recurses down to an unexpanded node. Trained to minimize the difference from the actual episode return and also the policy priors from the MCTS-found action distribution.
 
