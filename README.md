@@ -50,6 +50,16 @@ Unfortunately, MCTS does rather poorly in this domain because of sparse rewards 
 ![four-rooms-visits](mcts/four-rooms/visits.png)
 ![four-rooms-graph](mcts/four-rooms/visit-graph.png)
 
+## PPO 
+Original Paper: https://arxiv.org/pdf/1707.06347
+Implementation based on CleanRL version: https://github.com/vwxyzjn/cleanrl/blob/master/cleanrl/ppo.py
+
+Popular actor-critic style policy gradient algorithm that runs several rollouts in an evironment (using vectorized
+environmnets), and optimizes a clipped version of the conservative policy iteration to prevent overly large updates.
+
+![acrobot][ppo/acrobot.mp4]
+![cartpole][ppo/cartpole.mp4]
+
 ## Deep Q Learning:
 
 Simple convolutional DQN to play Atari pong. Examples in the code also solve common control problems like acrobot and cartpole.
