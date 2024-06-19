@@ -57,8 +57,8 @@ Implementation based on CleanRL version: https://github.com/vwxyzjn/cleanrl/blob
 Popular actor-critic style policy gradient algorithm that runs several rollouts in an evironment (using vectorized
 environmnets), and optimizes a clipped version of the conservative policy iteration to prevent overly large updates.
 
-![acrobot][ppo/acrobot.gif]
-![cartpole][ppo/cartpole.gif]
+![acrobot](ppo/acrobot.gif)
+![cartpole](ppo/cartpole.gif)
 
 ## Deep Q Learning:
 
