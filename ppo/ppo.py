@@ -16,6 +16,37 @@ from torch.distributions.categorical import Categorical
 from torch.utils.tensorboard import SummaryWriter
 
 # Run PPO on carpole, acrobot and mountain car with 3 seeds/ 9 workers
+"""
+Great article: https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/
+
+13 core implementation details: 
+    - Vectorized architecture: learn from several environments at once
+    - Orthogonal initialization of weights and constant intialiization of biases
+    - Adam epsilon param set to 1e-5 vs default 1e-8
+    - Adam learning rate annealing
+    - Generalized advantage estimation: 
+        - value bootstrap: if the environment hasnt ended, use next state as the value target
+        - td(lamdda): returns = advantages + values (td(lamdbda) is a mix between mc and pure td learning)
+    - mini-batch updates
+    - normalization of advantages: happens on a minibatch level
+    - clipped surrogate objective: objective from the paper
+    - value fcn loss clipping: might not actually benefit, but is used to match original implementation
+    - loss and entropy bonus: entropy bonus improves exploration (might not help in continuous setting)
+    - global gradient clipping: norm of concatenated gradients of all params do not exceed 0.5
+    - debug variables: (policy_loss, value_loss, entropy_loss, clipfrac, approxkl)
+    - Separate policy and value networks: sharing representations seems to hurt performance greatly
+
+Other useful techniques:
+    - invalid action masking: replace logits for invalid actions to negative infinity before sending to softmax
+    - early stopping of policy updates: track the approx KL div between policy before and after update, stop if they
+      exceed certain amount (typically 0.01)
+    - seed everything: use that to track reference implementation
+    - check ratio=1: ratio should always be 1 in the first epoch and first minibatch update
+    - check KL: if it goes too high, then policy is changing too quickly and something is wrong
+    - check 400 episodic return in breakout
+    - checkout weights and biases
+    - 
+"""
 # Inspired + reference code: https://github.com/vwxyzjn/cleanrl/blob/master/cleanrl/ppo.py
 
 args = {
@@ -43,7 +74,7 @@ args = {
     "ent_coef": 0.01,
     "vf_coef": 0.4,
     "max_grad_norm": 0.5,
-    "target_kl": None, # max norm for kl div threshold
+    "target_kl": 0.01, # max norm for kl div threshold
 
     # runtime params
     "batch_size": 0,
